@@ -60,4 +60,4 @@
 
 - 开发时请确保前端和后端服务都正常运行
 - API 请求地址配置在 `frontend/src/api/index.js`
-- 跨域配置在 `frontend/vite.config.js` 
+- 跨域配置在 `frontend/vite.config.js`
