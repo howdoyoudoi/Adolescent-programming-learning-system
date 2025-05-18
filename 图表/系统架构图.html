@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>青少年编程学习系统 - 分层系统架构图</title>
+  <style>
+    body { background: #f5f8ff; font-family: 'Segoe UI', 'PingFang SC', Arial, sans-serif; }
+    .container { width: 950px; margin: 30px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #dbeafe; padding: 30px 20px; position: relative; }
+    .title { text-align: center; font-size: 2em; color: #4CAF50; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { text-align: center; color: #888; margin-bottom: 30px; }
+    .layer-block { border-radius: 10px; margin-bottom: 24px; padding: 18px 0 12px 0; position: relative; }
+    .layer-title { font-weight: bold; font-size: 1.1em; margin-bottom: 10px; text-align: left; padding-left: 24px; }
+    .arrow-down { width: 60px; height: 40px; margin: 0 auto; display: block; }
+    .arrow-double { width: 60px; height: 50px; margin: 0 auto; display: block; }
+    .arrow-h-flex { display: flex; justify-content: center; align-items: flex-start; gap: 0; margin-bottom: 18px; }
+    .block-row { display: flex; justify-content: center; align-items: flex-start; gap: 38px; margin-bottom: 0; }
+    .arrow-h { width: 120px; height: 30px; display: flex; align-items: flex-end; }
+    .arrow-h svg { display: block; }
+    .block { border-radius: 6px; padding: 12px 18px; min-width: 110px; background: #fff; border: 1.5px solid #b2b2b2; font-size: 15px; text-align: center; box-shadow: 0 1px 4px #e3e3e3; position: relative; }
+    /* 层背景色 */
+    .layer-visit { background: #d6f5d6; border: 1.5px solid #a3e6a3; }
+    .layer-ui { background: #b2e0e6; border: 1.5px solid #7fd1db; }
+    .layer-interact { background: #fff7d6; border: 1.5px solid #f2e9b2; }
+    .layer-backend { background: #fffbe3; border: 1.5px solid #f2e9b2; }
+    .layer-db { background: #e3f6ff; border: 1.5px solid #b2e0f2; }
+    .desc { color: #888; font-size: 13px; margin: 10px 0 0 24px; }
+    .block-red { border: 1.5px solid #e57373; background: #ffeaea; }
+    .block-green { border: 1.5px solid #81c784; background: #e8f5e9; }
+    .block-blue { border: 1.5px solid #64b5f6; background: #e3f2fd; }
+    .block-yellow { border: 1.5px solid #ffd54f; background: #fffde7; }
+    .block-orange { border: 1.5px solid #ffb74d; background: #fff3e0; }
+    .block-gray { border: 1.5px solid #bdbdbd; background: #f5f5f5; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">青少年编程学习系统 - 分层系统架构图</div>
+    <div class="subtitle">（参考分层结构图风格）</div>
+
+    <!-- 访问层 -->
+    <div class="layer-block layer-visit">
+      <div class="layer-title">访问层</div>
+      <div class="block-row">
+        <div class="block block-green">小程序<br>/ 网页</div>
+      </div>
+    </div>
+    <svg class="arrow-double" viewBox="0 0 60 50"><path d="M30 0 V40 M30 40 L20 30 M30 40 L40 30 M30 10 L20 20 M30 10 L40 20" stroke="#888" stroke-width="2.5" fill="none"/></svg>
+
+    <!-- 前端UI层 -->
+    <div class="layer-block layer-ui">
+      <div class="layer-title">前端UI</div>
+      <div class="arrow-h-flex">
+        <div class="block block-blue">UI组件库<br>ElementUI / 自定义组件</div>
+        <div class="block block-blue">HTML</div>
+        <div class="block block-blue">CSS</div>
+        <span class="arrow-h">
+          <svg width="120" height="30"><defs><marker id="arrowhead" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 8 4, 0 8" fill="#64b5f6"/></marker></defs><line x1="0" y1="15" x2="120" y2="15" stroke="#64b5f6" stroke-width="2.5" marker-end="url(#arrowhead)"/></svg>
+        </span>
+        <div class="block block-blue">JavaScript<br>Vue3 + UniApp</div>
+      </div>
+      <div class="desc">前端UI层负责页面结构、样式与交互逻辑的实现，提升用户体验。</div>
+    </div>
+    <svg class="arrow-double" viewBox="0 0 60 50"><path d="M30 0 V40 M30 40 L20 30 M30 40 L40 30 M30 10 L20 20 M30 10 L40 20" stroke="#888" stroke-width="2.5" fill="none"/></svg>
+
+    <!-- 交互层 -->
+    <div class="layer-block layer-interact">
+      <div class="layer-title">交互层</div>
+      <div class="arrow-h-flex">
+        <div class="block block-yellow">Vue Router 路由<br>页面跳转</div>
+        <div class="block block-yellow">npm依赖管理</div>
+        <div class="block block-yellow">axios<br>前后端接口交互</div>
+        <span class="arrow-h">
+          <svg width="120" height="30"><defs><marker id="arrowhead2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 8 4, 0 8" fill="#ffd54f"/></marker></defs><line x1="0" y1="15" x2="120" y2="15" stroke="#ffd54f" stroke-width="2.5" marker-end="url(#arrowhead2)"/></svg>
+        </span>
+        <div class="block block-yellow">post/get请求</div>
+      </div>
+      <div class="desc">交互层负责前后端数据交互、页面跳转、依赖管理等。</div>
+    </div>
+    <svg class="arrow-double" viewBox="0 0 60 50"><path d="M30 0 V40 M30 40 L20 30 M30 40 L40 30 M30 10 L20 20 M30 10 L40 20" stroke="#888" stroke-width="2.5" fill="none"/></svg>
+
+    <!-- 后端层 -->
+    <div class="layer-block layer-backend">
+      <div class="layer-title">后端</div>
+      <div class="arrow-h-flex">
+        <div class="block block-red">Controller层<br>处理请求/响应<br>路由分发</div>
+        <span class="arrow-h">
+          <svg width="120" height="30"><defs><marker id="arrowhead3" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 8 4, 0 8" fill="#ffb74d"/></marker></defs><line x1="0" y1="15" x2="120" y2="15" stroke="#ffb74d" stroke-width="2.5" marker-end="url(#arrowhead3)"/></svg>
+        </span>
+        <div class="block block-orange">Service层<br>业务逻辑处理<br>接口实现</div>
+      </div>
+      <div class="arrow-h-flex" style="margin-top:10px;">
+        <div style="width:350px;"></div>
+        <div class="block block-orange">Service层<br>业务逻辑处理<br>接口实现</div>
+        <span class="arrow-h">
+          <svg width="120" height="30"><defs><marker id="arrowhead4" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 8 4, 0 8" fill="#ffd54f"/></marker></defs><line x1="0" y1="15" x2="120" y2="15" stroke="#ffd54f" stroke-width="2.5" marker-end="url(#arrowhead4)"/></svg>
+        </span>
+        <div class="block block-yellow">缓存<br>Redis</div>
+      </div>
+      <div class="block-row">
+        <div class="block block-gray">Auth认证<br>JWT/Bearer Token</div>
+        <div class="block block-gray">日志/监控</div>
+        <div class="block block-blue">Python代码执行</div>
+        <div class="block block-green">文件存储<br>作业/项目/资源</div>
+        <div class="block block-blue">API接口<br>RESTful</div>
+      </div>
+      <div class="desc">负责业务逻辑、认证、日志、文件、缓存、代码执行等</div>
+    </div>
+    <svg class="arrow-double" viewBox="0 0 60 50"><path d="M30 0 V40 M30 40 L20 30 M30 40 L40 30 M30 10 L20 20 M30 10 L40 20" stroke="#888" stroke-width="2.5" fill="none"/></svg>
+
+    <!-- 数据库层 -->
+    <div class="layer-block layer-db">
+      <div class="layer-title">数据库层</div>
+      <div class="arrow-h-flex">
+        <div class="block block-blue">MySQL<br>结构化数据存储</div>
+      </div>
+      <div class="desc">负责数据持久化等</div>
+    </div>
+
+    <div class="desc" style="margin-top:30px;">
+      <b>说明：</b><br>
+      1. 各层通过接口和数据流上下连接，层次分明，职责清晰。<br>
+      2. 前端UI与交互层解耦，后端分业务、认证、日志、文件、缓存等模块。<br>
+      3. 数据库层支持结构化数据和缓存，保障系统高效运行。
+    </div>
+  </div>
+</body>
+</html>

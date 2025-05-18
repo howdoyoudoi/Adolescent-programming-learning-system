@@ -1,0 +1,36 @@
+{
+  "name": "my-vue3-project",
+  "version": "1.0.0",
+  "description": "青少年编程学习系统",
+  "main": "main.js",
+  "scripts": {
+    "dev:h5": "uni -p h5",
+    "dev": "npm run dev:h5",
+    "build": "uni build",
+    "start": "npm run dev:h5",
+    "download-media": "node scripts/download-media.js"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-3080720230703001",
+    "@dcloudio/uni-components": "3.0.0-3080720230703001",
+    "@dcloudio/uni-h5": "3.0.0-3080720230703001",
+    "@vue/runtime-core": "^3.3.4",
+    "@vue/shared": "^3.3.4",
+    "blockly": "^11.2.2",
+    "split.js": "^1.6.5",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "^3.3.2",
+    "@dcloudio/uni-cli-shared": "3.0.0-3080720230703001",
+    "@dcloudio/vite-plugin-uni": "3.0.0-3080720230703001",
+    "@vue/compiler-sfc": "^3.3.4",
+    "terser": "^5.19.2",
+    "vite": "^4.4.9"
+  },
+  "optimizeDeps": {
+    "include": [
+      "blockly"
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>前端代码模块活动图</title>
+  <style>
+    body { background: #fff; font-family: 'Segoe UI', 'PingFang SC', Arial, sans-serif; }
+    .center { text-align: center; margin-top: 30px; }
+  </style>
+</head>
+<body>
+<div class="center">
+  <svg width="900" height="600">
+    <!-- 开始节点 -->
+    <circle cx="80" cy="40" r="16" fill="#000" />
+    <!-- 进入编程练习页面 -->
+    <rect x="40" y="70" width="80" height="40" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="80" y="95" text-anchor="middle" font-size="15">进入编程练习</text>
+    <!-- 箭头 -->
+    <line x1="80" y1="56" x2="80" y2="70" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 查看题目描述 -->
+    <rect x="40" y="130" width="80" height="40" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="80" y="155" text-anchor="middle" font-size="15">查看题目描述</text>
+    <line x1="80" y1="110" x2="80" y2="130" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 编辑代码 -->
+    <rect x="40" y="190" width="80" height="40" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="80" y="215" text-anchor="middle" font-size="15">编辑代码</text>
+    <line x1="80" y1="170" x2="80" y2="190" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 代码自动保存（分支） -->
+    <polygon points="80,250 110,280 80,310 50,280" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="80" y="285" text-anchor="middle" font-size="15">自动保存?</text>
+    <line x1="80" y1="230" x2="80" y2="250" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 自动保存分支（是） -->
+    <rect x="220" y="260" width="100" height="40" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="270" y="285" text-anchor="middle" font-size="15">已自动保存</text>
+    <line x1="110" y1="280" x2="220" y2="280" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 自动保存分支（否，主线继续） -->
+    <line x1="80" y1="310" x2="80" y2="370" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 运行代码 -->
+    <rect x="40" y="370" width="80" height="40" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="80" y="395" text-anchor="middle" font-size="15">运行代码</text>
+    <!-- 查看运行结果 -->
+    <rect x="40" y="370" width="80" height="40" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="80" y="395" text-anchor="middle" font-size="15">查看运行结果</text>
+    <line x1="80" y1="350" x2="80" y2="370" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 提交代码 -->
+    <rect x="40" y="430" width="80" height="40" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="80" y="455" text-anchor="middle" font-size="15">提交代码</text>
+    <line x1="80" y1="410" x2="80" y2="430" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 判题 -->
+    <rect x="40" y="490" width="80" height="40" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="80" y="515" text-anchor="middle" font-size="15">判题</text>
+    <line x1="80" y1="470" x2="80" y2="490" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 判题结果判断 -->
+    <polygon points="220,510 250,530 220,550 190,530" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="220" y="535" text-anchor="middle" font-size="15">通过?</text>
+    <line x1="120" y1="510" x2="190" y2="530" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 未通过回到编辑代码 -->
+    <path d="M190,530 Q120,530 120,210 Q80,210 80,210" fill="none" stroke="#000" stroke-width="2"/>
+    <text x="130" y="520" font-size="13">未通过</text>
+    <!-- 通过进入完成节点 -->
+    <rect x="280" y="520" width="80" height="40" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="320" y="545" text-anchor="middle" font-size="15">完成练习</text>
+    <line x1="250" y1="530" x2="280" y2="540" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 结束节点 -->
+    <circle cx="400" cy="540" r="12" fill="#000" />
+    <line x1="360" y1="540" x2="400" y2="540" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- 箭头定义 -->
+    <defs>
+      <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+        <polygon points="0 0, 8 4, 0 8" fill="#000"/>
+      </marker>
+    </defs>
+  </svg>
+  <div style="margin-top:16px;font-size:15px;">图 前端代码模块活动图</div>
+</div>
+</body>
+</html>

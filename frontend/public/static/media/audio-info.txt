@@ -1,0 +1,22 @@
+音频文件信息：
+
+1. click.mp3
+来源：https://freesound.org/people/Breviceps/sounds/448080/
+描述：简短的UI点击音效
+许可：CC0
+
+2. disconnect.wav
+来源：https://freesound.org/people/Timbre/sounds/435502/
+描述：断开连接提示音
+许可：CC-BY-NC 4.0
+
+3. delete.mp3
+来源：https://freesound.org/people/HTN4ever/sounds/240943/
+描述：删除操作音效
+许可：CC-BY 3.0
+
+请从以上链接下载相应的音频文件并放置在此目录中。
+下载后请确保文件名与配置文件中的名称一致：
+- click.mp3
+- disconnect.wav
+- delete.mp3 

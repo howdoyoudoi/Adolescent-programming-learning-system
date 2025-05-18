@@ -1,0 +1,8 @@
+function performFFT(data) {
+    const fft = new FFT.complex(data.length, false);    // 创建FFT实例
+    const output = fft.createComplexArray();            // 创建复数数组容器
+    
+    const complexData = FFT.toComplexArray(data);       // 将实数转为复数格式
+    fft.transform(output, complexData);                 // 执行FFT变换
+    return output;
+}

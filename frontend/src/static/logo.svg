@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <style>
+        .st0{fill:#4CAF50;}
+        .st1{fill:#FFFFFF;}
+        .st2{fill:#444444;}
+    </style>
+    <path class="st0" d="M160 200H40C17.9 200 0 182.1 0 160V40C0 17.9 17.9 0 40 0h120c22.1 0 40 17.9 40 40v120C200 182.1 182.1 200 160 200z"/>
+    <path class="st1" d="M140 60H60c-11 0-20 9-20 20v40c0 11 9 20 20 20h80c11 0 20-9 20-20V80C160 69 151 60 140 60z"/>
+    <path class="st2" d="M120 100H80c-11.1 0-20 8.9-20 20s8.9 20 20 20h40c11.1 0 20-8.9 20-20S131.1 100 120 100z"/>
+</svg> 

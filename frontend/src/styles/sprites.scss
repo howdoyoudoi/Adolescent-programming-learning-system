@@ -1,0 +1,31 @@
+// 精灵图位置定义
+$sprite-icons: (
+  'close': (0, 0),
+  'menu': (40, 0),
+  'edit': (80, 0),
+  'delete': (120, 0),
+  'add': (160, 0),
+  'search': (0, 40),
+  'settings': (40, 40),
+  'user': (80, 40),
+  'notification': (120, 40),
+  'home': (160, 40)
+);
+
+// 精灵图混入
+@mixin sprite-icon($name) {
+  $position: map-get($sprite-icons, $name);
+  background-image: url('/static/media/sprites.png');
+  background-position: nth($position, 1) * -1px nth($position, 2) * -1px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+
+// 生成精灵图类
+@each $name, $position in $sprite-icons {
+  .icon-#{$name} {
+    @include sprite-icon($name);
+  }
+} 

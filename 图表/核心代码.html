@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>系统核心代码</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid #ddd;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+        }
+        .file-section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>系统核心代码</h1>
+        
+        <div class="file-section">
+            <h2>1. 主入口文件 (main.ts)</h2>
+            <pre><code>import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+import { createPinia } from 'pinia'
+import './styles/index.scss'
+
+const app = createApp(App)
+const pinia = createPinia()
+
+app.use(router)
+app.use(pinia)
+app.mount('#app')</code></pre>
+        </div>
+
+        <div class="file-section">
+            <h2>2. 路由配置 (router/index.ts)</h2>
+            <pre><code>import { createRouter, createWebHistory } from 'vue-router'
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('../views/Home.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('../views/Register.vue')
+  }
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
+
+export default router</code></pre>
+        </div>
+
+        <div class="file-section">
+            <h2>3. 状态管理 (store/user.ts)</h2>
+            <pre><code>import { defineStore } from 'pinia'
+
+export const useUserStore = defineStore('user', {
+  state: () => ({
+    userInfo: null,
+    token: null
+  }),
+  actions: {
+    setUserInfo(info) {
+      this.userInfo = info
+    },
+    setToken(token) {
+      this.token = token
+    },
+    logout() {
+      this.userInfo = null
+      this.token = null
+    }
+  }
+})</code></pre>
+        </div>
+
+        <div class="file-section">
+            <h2>4. API请求封装 (api/request.ts)</h2>
+            <pre><code>import axios from 'axios'
+
+const request = axios.create({
+  baseURL: '/api',
+  timeout: 5000
+})
+
+request.interceptors.request.use(
+  config => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`
+    }
+    return config
+  },
+  error => {
+    return Promise.reject(error)
+  }
+)
+
+request.interceptors.response.use(
+  response => {
+    return response.data
+  },
+  error => {
+    return Promise.reject(error)
+  }
+)
+
+export default request</code></pre>
+        </div>
+
+        <div class="file-section">
+            <h2>5. 工具函数 (utils/auth.ts)</h2>
+            <pre><code>export const setToken = (token: string) => {
+  localStorage.setItem('token', token)
+}
+
+export const getToken = () => {
+  return localStorage.getItem('token')
+}
+
+export const removeToken = () => {
+  localStorage.removeItem('token')
+}
+
+export const isAuthenticated = () => {
+  return !!getToken()
+}</code></pre>
+        </div>
+    </div>
+</body>
+</html> 

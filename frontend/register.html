@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background: #f5f5f5;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 375px;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .register-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .logo {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(76,175,80,0.2);
+        }
+
+        .register-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .register-btn:hover {
+            background: #45a049;
+        }
+
+        .register-btn:active {
+            transform: scale(0.98);
+        }
+
+        .bottom-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .bottom-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .bottom-links a:hover {
+            color: #4CAF50;
+        }
+
+        .password-requirements {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="register-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48c3R5bGU+LnN0MHtmaWxsOiM0Q0FGNTA7fS5zdDF7ZmlsbDojRkZGRkZGO30uc3Qye2ZpbGw6IzQ0NDQ0NDt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTYwIDIwMEg0MEMxNy45IDIwMCAwIDE4Mi4xIDAgMTYwVjQwQzAgMTcuOSAxNy45IDAgNDAgMGgxMjBjMjIuMSAwIDQwIDE3LjkgNDAgNDB2MTIwQzIwMCAxODIuMSAxODIuMSAyMDAgMTYwIDIwMHoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTQwIDYwSDYwYy0xMSAwLTIwIDktMjAgMjB2NDBjMCAxMSA5IDIwIDIwIDIwaDgwYzExIDAgMjAtOSAyMC0yMFY4MEMxNjAgNjkgMTUxIDYwIDE0MCA2MHoiLz48cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTIwIDEwMEg4MGMtMTEuMSAwLTIwIDguOS0yMCAyMHM4LjkgMjAgMjAgMjBoNDBjMTEuMSAwIDIwLTguOSAyMC0yMFMxMzEuMSAxMDAgMTIwIDEwMHoiLz48L3N2Zz4=" alt="Logo">
+            </div>
+            <div class="form-group">
+                <label class="form-label">用户名</label>
+                <input type="text" class="input-field" placeholder="请输入账号">
+            </div>
+            <div class="form-group">
+                <label class="form-label">密码</label>
+                <input type="password" class="input-field" placeholder="请输入密码">
+                <div class="password-requirements">密码长度至少6位，包含字母和数字</div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">确认密码</label>
+                <input type="password" class="input-field" placeholder="请再次输入密码">
+            </div>
+            <button class="register-btn">注册</button>
+            <div class="bottom-links">
+                <a href="login.html">已有账号？立即登录</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 输入框交互效果
+        const inputs = document.querySelectorAll('.input-field');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = '#4CAF50';
+            });
+            input.addEventListener('blur', function() {
+                this.style.borderColor = '#e0e0e0';
+            });
+        });
+
+        // 注册按钮点击事件
+        document.querySelector('.register-btn').addEventListener('click', function() {
+            const username = document.querySelector('input[type="text"]').value;
+            const password = document.querySelector('input[type="password"]').value;
+            const confirmPassword = document.querySelectorAll('input[type="password"]')[1].value;
+
+            // 简单的表单验证
+            if (!username || !password || !confirmPassword) {
+                alert('请填写完整信息');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('两次输入的密码不一致');
+                return;
+            }
+
+            // 密码强度验证
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+            if (!passwordRegex.test(password)) {
+                alert('密码必须至少6位，包含字母和数字');
+                return;
+            }
+
+            // TODO: 实现注册逻辑
+            alert('注册成功！');
+            // 注册成功后跳转到登录页
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html> 

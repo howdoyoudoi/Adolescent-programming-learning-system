@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'tabbar-icon';
+  src: url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAA...') format('woff2');
+}
+
+.tabbar-icon {
+  font-family: "tabbar-icon" !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e600";
+}
+
+.icon-course:before {
+  content: "\e601";
+} 

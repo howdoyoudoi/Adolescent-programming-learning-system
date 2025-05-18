@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>青少年编程学习系统 - 用户流程图</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top */
+            min-height: 95vh;
+            padding-top: 20px;
+        }
+        .flowchart-container {
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .flowchart-step {
+            border: 1px solid #000;
+            padding: 15px 25px;
+            margin: 20px auto;
+            min-width: 180px; /* Slightly wider for better text */
+            background-color: #e0f7fa; /* Light blue background */
+            border-radius: 5px;
+            position: relative;
+            z-index: 1; /* Ensure steps are above lines */
+        }
+        .flowchart-step.start-end {
+            border-radius: 50px; /* Oval shape for start/end */
+            background-color: #c8e6c9; /* Light green */
+        }
+        .flowchart-step.decision {
+            /* Diamond shape - using CSS transform and fixed size */
+            width: 120px; /* Fixed width */
+            height: 70px; /* Fixed height */
+            line-height: 70px; /* Vertically center text */
+            padding: 0 10px; /* Adjust padding */
+            box-sizing: border-box; /* Include padding in dimensions */
+            background-color: #ffecb3; /* Light yellow */
+            transform: rotate(45deg); /* Rotate to make diamond */
+            margin: 40px auto; /* Adjust margin for rotated shape */
+        }
+         .flowchart-step.decision span {
+             display: block;
+             transform: rotate(-45deg); /* Rotate text back */
+             white-space: normal; /* Allow text wrapping */
+             text-align: center;
+             line-height: 1.2; /* Adjust line height for wrapped text */
+         }
+
+        /* Basic connecting lines (simplified) */
+        .connector {
+            position: relative;
+            width: 1px;
+            height: 30px; /* Length of the connector line */
+            background-color: #000;
+            margin: 0 auto; /* Center the line */
+             z-index: 0; /* Ensure lines are below steps */
+        }
+
+         .connector::after {
+             content: '';
+             position: absolute;
+             bottom: 0;
+             left: 50%;
+             transform: translateX(-50%);
+             width: 0;
+             height: 0;
+             border-left: 5px solid transparent;
+             border-right: 5px solid transparent;
+             border-top: 5px solid #000;
+         }
+
+        .decision + .connector {
+            margin-top: 0;
+             height: 40px; /* Longer line after decision node */
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="flowchart-container">
+        <div class="flowchart-step start-end">开始</div>
+        <div class="connector"></div>
+        <div class="flowchart-step">用户注册 / 登录</div>
+        <div class="connector"></div>
+        <div class="flowchart-step">进入系统首页</div>
+        <div class="connector"></div>
+        <div class="flowchart-step decision"><span>想学习课程 或 进行练习?</span></div>
+        <div class="connector"></div>
+        <div class="flowchart-step">浏览课程列表 或 练习题库</div>
+        <div class="connector"></div>
+        <div class="flowchart-step decision"><span>选择课程 还是 练习题?</span></div>
+        <div class="connector"></div>
+        <!-- Path for Courses -->
+        <div class="flowchart-step">进入课程详情并学习</div>
+        <div class="connector"></div>
+         <div class="flowchart-step decision"><span>课程学习完成?</span></div>
+         <div class="connector"></div>
+         <!-- Path for Exercises -->
+        <div class="flowchart-step">进入在线编辑器并编码</div>
+         <div class="connector"></div>
+         <div class="flowchart-step decision"><span>练习完成并提交?</span></div>
+         <div class="connector"></div>
+
+        <!-- Merge point (simplified) and next steps -->
+        <div class="flowchart-step">查看学习进度 / 练习结果</div>
+        <div class="connector"></div>
+        <div class="flowchart-step decision"><span>想去社区互动?</span></div>
+        <div class="connector"></div>
+        <!-- Path for Community -->
+        <div class="flowchart-step">浏览讨论区 / 提问 / 分享</div>
+         <div class="connector"></div>
+
+        <div class="flowchart-step start-end">结束</div>
+    </div>
+</body>
+</html>

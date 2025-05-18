@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "blockly": "^11.2.2",
+    "echarts": "^5.6.0"
+  }
+}
